@@ -1,17 +1,11 @@
+import React from 'react'
 
-import Counter from '@/components/counter';
-import SimpleCounter from '@/components/simpleCounter';
-
-import React from 'react';
-
-
-const HomePage: React.FC = () => {
+const page = () => {
   return (
-    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
-    
-   <Counter/>
+    <div>
+     HOME
     </div>
-  );
-};
+  )
+}
 
-export default HomePage;
+export default page
