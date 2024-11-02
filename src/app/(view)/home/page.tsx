@@ -48,7 +48,7 @@ export default function HomePage() {
           placeholder="Audio Name"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          className="w-full p-2 border rounded-md focus:ring-2 focus:ring-blue-400 focus:outline-none"
+          className="w-full text-black p-2 border rounded-md focus:ring-2 focus:ring-blue-400 focus:outline-none"
         />
         
         <input
@@ -71,7 +71,6 @@ export default function HomePage() {
           </p>
         )}
       </form>
-
       <AudioList />
     </div>
   );
