@@ -12,6 +12,6 @@ public class Main {
         AdminController adminController = new AdminController(loginView, uploadView);
         UploadController uploadController = new UploadController(uploadView);
 
-        loginView.setVisible(true); // Start with the login view visible
+        loginView.setVisible(true); 
     }
 }
