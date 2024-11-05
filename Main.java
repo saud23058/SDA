@@ -1,5 +1,5 @@
-// Main.java
-import controllers.AudioUploaderController;
+import controllers.admin.AdminController;
+import controllers.upload.UploadController;
 import views.AudioUploaderView;
 import views.UploadView;
 
@@ -8,8 +8,10 @@ public class Main {
         AudioUploaderView loginView = new AudioUploaderView();
         UploadView uploadView = new UploadView();
 
-        new AudioUploaderController(loginView, uploadView);
+      
+        AdminController adminController = new AdminController(loginView, uploadView);
+        UploadController uploadController = new UploadController(uploadView);
 
-        loginView.setVisible(true);
+        loginView.setVisible(true); // Start with the login view visible
     }
 }

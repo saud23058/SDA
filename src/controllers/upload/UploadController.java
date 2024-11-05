@@ -1,8 +1,6 @@
-
-package controllers;
+package controllers.upload;
 
 import models.AudioFile;
-import views.AudioUploaderView;
 import views.UploadView;
 
 import javax.swing.*;
@@ -11,37 +9,16 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AudioUploaderController {
-    private AudioUploaderView loginView;
+public class UploadController {
     private UploadView uploadView;
     private List<AudioFile> audioFiles;
-    private static final String ADMIN_USERNAME = "admin";
-    private static final String ADMIN_PASSWORD = "123";
 
-    public AudioUploaderController(AudioUploaderView loginView, UploadView uploadView) {
-        this.loginView = loginView;
+    public UploadController(UploadView uploadView) {
         this.uploadView = uploadView;
         this.audioFiles = new ArrayList<>();
-
-        this.loginView.setLoginListener(new LoginListener());
         this.uploadView.setUploadListener(new UploadListener());
         this.uploadView.setGetDataListener(new GetDataListener());
-        this.uploadView.setPlayListener(new PlayListener());  
-    }
-
-    class LoginListener implements ActionListener {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            String username = loginView.getUsername();
-            String password = loginView.getPassword();
-
-            if (ADMIN_USERNAME.equals(username) && ADMIN_PASSWORD.equals(password)) {
-                loginView.setVisible(false);
-                uploadView.setVisible(true);
-            } else {
-                loginView.displayErrorMessage("Incorrect username or password.");
-            }
-        }
+        this.uploadView.setPlayListener(new PlayListener());
     }
 
     class UploadListener implements ActionListener {
